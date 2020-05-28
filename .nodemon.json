@@ -1,0 +1,5 @@
+{
+  "ext": "ts",
+  "exec": "node --inspect=0.0.0.0 --require=ts-node/register --require=dotenv/config src/index.ts",
+  "watch": ["src"]
+}
