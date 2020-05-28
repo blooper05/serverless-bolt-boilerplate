@@ -1,0 +1,13 @@
+---
+version: '3.7'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app:cached
+      - /app/node_modules
+    command: yarn run start:dev
+    ports:
+      - 3000:3000  # for HTTP Server
+      - 9229:9229  # for Node.js Inspector
