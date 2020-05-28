@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "lint": "eslint src --ext .ts"
+  },
   "dependencies": {
     "@slack/bolt": "^2.1.1"
   },
