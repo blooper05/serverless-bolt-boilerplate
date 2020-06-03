@@ -1,0 +1,53 @@
+---
+service: ${self:custom.SERVICE}
+
+frameworkVersion: 1.72.0
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'ap-northeast-1'}
+  logRetentionInDays: ${self:custom.LOG_RETENTION_IN_DAYS.${self:provider.stage}}
+  deploymentBucket:
+    name: ${self:custom.SERVICE}-serverless
+    blockPublicAccess: true
+    serverSideEncryption: AES256
+  logs:
+    httpApi: true
+
+functions:
+  main:
+    handler: src/lambda.handler
+    events:
+      - httpApi:
+          method: POST
+          path: /slack/events
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-domain-manager
+  - serverless-layers
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-prune-plugin
+
+custom:
+  customDomain:
+    domainName: ${self:custom.SUBDOMAIN.${self:provider.stage}}.${self:custom.DOMAIN}
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 5
+  serverless-layers:
+    packageManager: yarn
+  SERVICE: serverless-bolt-boilerplate
+  DOMAIN: ${ssm:/singleton/domain_name}
+  SUBDOMAIN:
+    dev: bot-dev
+    stg: bot-stg
+    prd: bot
+  LOG_RETENTION_IN_DAYS:
+    dev: 7
+    stg: 7
+    prd: ''  # Never expire
