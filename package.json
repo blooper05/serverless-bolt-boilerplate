@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "deploy:dev": "serverless deploy --stage dev",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "start:dev": "nodemon --config .nodemon.json --legacy-watch"
