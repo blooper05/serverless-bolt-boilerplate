@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "serverless-bolt-boilerplate",
   "license": "UNLICENSED",
+  "author": "blooper05",
   "engines": {
     "node": "12.18.0"
   },
