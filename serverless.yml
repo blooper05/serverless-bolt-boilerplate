@@ -29,7 +29,6 @@ plugins:
   - serverless-domain-manager
   - serverless-layers
   - serverless-offline
-  - serverless-plugin-typescript
   - serverless-prune-plugin
 
 custom:
