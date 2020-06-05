@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "preserveConstEnums": true,
-    "strictNullChecks": true,
+    "incremental": true,
+    "target": "es2019",
+    "module": "commonjs",
+    "declaration": true,
     "sourceMap": true,
-    "allowJs": true,
-    "target": "es5",
-    "outDir": ".build",
+    "outDir": "./dist",
+    "removeComments": true,
+    "strict": true,
     "moduleResolution": "node",
-    "lib": ["es2015"],
-    "rootDir": "./"
-  }
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules", "dist"]
 }
