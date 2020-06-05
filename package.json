@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "12.18.0"
+  },
   "scripts": {
     "prebuild": "yarn run clean",
     "build": "tsc --project tsconfig.json",
