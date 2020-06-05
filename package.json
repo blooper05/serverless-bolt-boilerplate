@@ -1,4 +1,5 @@
 {
+  "name": "serverless-bolt-boilerplate",
   "engines": {
     "node": "12.18.0"
   },
