@@ -1,6 +1,11 @@
 {
   "scripts": {
-    "deploy:dev": "serverless deploy --stage dev",
+    "prebuild": "yarn run clean",
+    "build": "tsc --project tsconfig.json",
+    "clean": "rimraf dist",
+    "predeploy": "yarn run build",
+    "deploy": "serverless deploy",
+    "deploy:dev": "yarn run deploy --stage dev",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "start:dev": "nodemon --config .nodemon.json --legacy-watch"

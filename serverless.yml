@@ -16,9 +16,17 @@ provider:
   logs:
     httpApi: true
 
+package:
+  include:
+    - dist/**
+    - '!dist/**/*.d.ts'
+    - '!dist/**/*.tsbuildinfo'
+  exclude:
+    - '**'
+
 functions:
   main:
-    handler: src/lambda.handler
+    handler: dist/lambda.handler
     events:
       - httpApi:
           method: POST
