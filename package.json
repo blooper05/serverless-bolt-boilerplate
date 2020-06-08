@@ -40,7 +40,7 @@
     "serverless-deployment-bucket": "^1.1.2",
     "serverless-domain-manager": "^4.1.1",
     "serverless-layers": "^2.2.4",
-    "serverless-offline": "^6.3.1",
+    "serverless-offline": "^6.4.0",
     "serverless-prune-plugin": "^1.4.3",
     "ts-node": "^8.10.2",
     "typescript": "~3.7.5"
