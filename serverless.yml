@@ -27,6 +27,7 @@ package:
 functions:
   main:
     handler: dist/lambda.handler
+    memorySize: 128
     events:
       - httpApi:
           method: POST
