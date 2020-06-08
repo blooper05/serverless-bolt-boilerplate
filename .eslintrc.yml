@@ -7,8 +7,5 @@ extends:
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:prettier/recommended'
   - 'prettier/@typescript-eslint'
-globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
 parserOptions:
 rules: {}
