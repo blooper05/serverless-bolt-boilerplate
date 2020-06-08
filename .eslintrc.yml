@@ -3,9 +3,10 @@ env:
   es2020: true
   node: true
 extends:
-  - airbnb-base
+  - airbnb-typescript/base
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:prettier/recommended'
   - 'prettier/@typescript-eslint'
 parserOptions:
+  project: ./tsconfig.json
 rules: {}
