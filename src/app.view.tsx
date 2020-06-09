@@ -5,7 +5,7 @@ export const helloWorld = ({ name }: { name: string }): any => {
   return JSXSlack(
     <Blocks>
       <Section>
-        Hi! {name}! :wave:
+        Hi <a href={`@${name}`}>name</a>! :wave:
       </Section>
     </Blocks>
   );
