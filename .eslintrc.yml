@@ -4,6 +4,7 @@ env:
   node: true
 extends:
   - airbnb-typescript/base
+  - plugin:jsx-a11y/recommended
   - plugin:@typescript-eslint/recommended
   - prettier
   - prettier/@typescript-eslint
