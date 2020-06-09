@@ -5,8 +5,8 @@ import { initBolt, initExpress } from './server';
 import { initListener } from './app.controller';
 
 const isLambda = true;
-const express = initExpress(isLambda);
-const bolt = initBolt(express);
+const express = initExpress({ isLambda });
+const bolt = initBolt({ express });
 
 export const handler: APIGatewayProxyHandler = async (event, context): Promise<APIGatewayProxyResult> => {
   const server = createServer(express.app);
