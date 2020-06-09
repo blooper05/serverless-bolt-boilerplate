@@ -24,4 +24,19 @@ export const initListener = async (app: App): Promise<void> => {
       console.error(error);
     }
   });
+
+  app.view('modal', async ({ view, ack, context, body }) => {
+    await ack();
+
+    try {
+      const token = context.botToken;
+      const channel = view.state.values.channelBlock.channelAction.selected_channel;
+      const text = view.state.values.postBlock.postAction.value;
+      const user = body.user.id;
+
+      await app.client.chat.postEphemeral({ token, channel, text, user });
+    } catch (error) {
+      console.error(error);
+    }
+  });
 }

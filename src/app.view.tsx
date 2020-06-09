@@ -14,15 +14,15 @@ export const helloWorld = ({ name }: { name: string }): Block[] => {
 
 export const modal = ({ name }: { name: string }): View => {
   return JSXSlack(
-    <Modal title='Sample Modal View' close='Cancel' submit='Submit'>
+    <Modal title='Sample Modal View' close='Cancel' submit='Submit' callbackId='modal'>
       <Section>
         <p>
           Hi <a href={`@${name}`}>name</a>! :wave:
         </p>
       </Section>
       <Divider />
-      <Textarea label='write something down' placeholder='Lorem Ipsum' required />
-      <ChannelsSelect label='select the channel' required />
+      <Textarea label='write something down' placeholder='Lorem Ipsum' required blockId='postBlock' actionId='postAction' />
+      <ChannelsSelect label='select the channel' required blockId='channelBlock' actionId='channelAction' />
     </Modal>
   );
 }
