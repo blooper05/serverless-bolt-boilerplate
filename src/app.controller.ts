@@ -1,18 +1,12 @@
 import { App } from '@slack/bolt';
+import { helloWorld } from './app.view';
 
 export const initListener = async (app: App): Promise<void> => {
   app.event('app_mention', async ({ event, say }) => {
-    await say({
-      text: '',
-      blocks: [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: `Hi! <@${event.user}> :wave:`,
-          },
-        },
-      ],
-    });
+    const text = '';
+    const name = event.user;
+    const blocks = helloWorld({ name });
+
+    await say({ text, blocks });
   });
 }
