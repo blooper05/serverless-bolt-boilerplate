@@ -1,6 +1,6 @@
 /** @jsx JSXSlack.h */
-import { JSXSlack, Blocks, Section } from '@speee-js/jsx-slack';
-import { Block } from '@slack/types';
+import { JSXSlack, Blocks, Section, Modal, Divider, Textarea, ChannelsSelect } from '@speee-js/jsx-slack';
+import { Block, View } from '@slack/types';
 
 export const helloWorld = ({ name }: { name: string }): Block[] => {
   return JSXSlack(
@@ -9,5 +9,20 @@ export const helloWorld = ({ name }: { name: string }): Block[] => {
         Hi <a href={`@${name}`}>name</a>! :wave:
       </Section>
     </Blocks>
+  );
+}
+
+export const modal = ({ name }: { name: string }): View => {
+  return JSXSlack(
+    <Modal title='Sample Modal View' close='Cancel' submit='Submit'>
+      <Section>
+        <p>
+          Hi <a href={`@${name}`}>name</a>! :wave:
+        </p>
+      </Section>
+      <Divider />
+      <Textarea label='write something down' placeholder='Lorem Ipsum' required />
+      <ChannelsSelect label='select the channel' required />
+    </Modal>
   );
 }
