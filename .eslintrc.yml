@@ -3,7 +3,7 @@ env:
   es2020: true
   node: true
 extends:
-  - airbnb-typescript/base
+  - airbnb-typescript
   - plugin:@typescript-eslint/recommended
   - prettier
   - prettier/@typescript-eslint
