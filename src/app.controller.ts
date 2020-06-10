@@ -1,5 +1,5 @@
 import { App } from '@slack/bolt';
-import { helloWorld, modal } from './app.view';
+import { helloWorld, sampleModal } from './app.view';
 
 export const initListener = async (app: App): Promise<void> => {
   app.event('app_mention', async ({ event, say }) => {
@@ -17,7 +17,7 @@ export const initListener = async (app: App): Promise<void> => {
       const token = context.botToken;
       const triggerId = command.trigger_id;
       const name = command.user_id;
-      const view = modal({ name });
+      const view = sampleModal({ name });
 
       await app.client.views.open({ token, trigger_id: triggerId, view });
     } catch (error) {

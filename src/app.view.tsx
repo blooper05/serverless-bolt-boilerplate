@@ -12,7 +12,7 @@ export const helloWorld = ({ name }: { name: string }): Block[] => {
   );
 }
 
-export const modal = ({ name }: { name: string }): View => {
+export const sampleModal = ({ name }: { name: string }): View => {
   return JSXSlack(
     <Modal title='Sample Modal View' close='Cancel' submit='Submit' callbackId='modal'>
       <Section>
