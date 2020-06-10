@@ -15,11 +15,11 @@ export const initListener = async (app: App): Promise<void> => {
 
     try {
       const token = context.botToken;
-      const triggerId = command.trigger_id;
+      const { trigger_id } = command; // eslint-disable-line @typescript-eslint/naming-convention
       const userId = command.user_id;
       const view = sampleModal({ userId });
 
-      await app.client.views.open({ token, trigger_id: triggerId, view });
+      await app.client.views.open({ token, trigger_id, view });
     } catch (error) {
       console.error(error);
     }
