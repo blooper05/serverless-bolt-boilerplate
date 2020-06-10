@@ -4,8 +4,8 @@ import { helloWorld, sampleModal } from './app.view';
 export const initListener = async (app: App): Promise<void> => {
   app.event('app_mention', async ({ event, say }) => {
     const text = '';
-    const name = event.user;
-    const blocks = helloWorld({ name });
+    const userId = event.user;
+    const blocks = helloWorld({ userId });
 
     await say({ text, blocks });
   });
@@ -16,8 +16,8 @@ export const initListener = async (app: App): Promise<void> => {
     try {
       const token = context.botToken;
       const triggerId = command.trigger_id;
-      const name = command.user_id;
-      const view = sampleModal({ name });
+      const userId = command.user_id;
+      const view = sampleModal({ userId });
 
       await app.client.views.open({ token, trigger_id: triggerId, view });
     } catch (error) {

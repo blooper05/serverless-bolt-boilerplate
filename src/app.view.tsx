@@ -2,22 +2,22 @@
 import { JSXSlack, Blocks, Section, Modal, Divider, Textarea, ChannelsSelect } from '@speee-js/jsx-slack';
 import { Block, View } from '@slack/types';
 
-export const helloWorld = ({ name }: { name: string }): Block[] => {
+export const helloWorld = ({ userId }: { userId: string }): Block[] => {
   return JSXSlack(
     <Blocks>
       <Section>
-        Hi <a href={`@${name}`}>name</a>! :wave:
+        Hi <a href={`@${userId}`}>user</a>! :wave:
       </Section>
     </Blocks>
   );
 }
 
-export const sampleModal = ({ name }: { name: string }): View => {
+export const sampleModal = ({ userId }: { userId: string }): View => {
   return JSXSlack(
     <Modal title='Sample Modal View' close='Cancel' submit='Submit' callbackId='modal'>
       <Section>
         <p>
-          Hi <a href={`@${name}`}>name</a>! :wave:
+          Hi <a href={`@${userId}`}>user</a>! :wave:
         </p>
       </Section>
       <Divider />
