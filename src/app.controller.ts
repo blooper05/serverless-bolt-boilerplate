@@ -1,5 +1,5 @@
 import { App } from '@slack/bolt';
-import { helloWorld, sampleModal } from './app.view';
+import { helloWorld, sampleModal } from './views/app';
 
 export const initListener = async (app: App): Promise<void> => {
   app.event('app_mention', async ({ event, say }) => {
