@@ -16,6 +16,8 @@
     "deploy:dev": "yarn run deploy --stage dev",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "prestart:dev:sls": "yarn run build",
+    "start:dev:sls": "serverless offline --host 0.0.0.0",
     "start:dev": "nodemon --config .nodemon.json --legacy-watch"
   },
   "dependencies": {
