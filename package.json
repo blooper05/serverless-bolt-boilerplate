@@ -2,6 +2,7 @@
   "name": "serverless-bolt-boilerplate",
   "version": "0.1.0",
   "description": "serverless-bolt-boilerplate",
+  "private": true,
   "license": "UNLICENSED",
   "author": "blooper05",
   "engines": {
