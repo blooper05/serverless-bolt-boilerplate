@@ -30,7 +30,8 @@ export const initListener = async (app: App): Promise<void> => {
 
     try {
       const token = context.botToken;
-      const channel = view.state.values.channelBlock.channelAction.selected_channel;
+      const channel =
+        view.state.values.channelBlock.channelAction.selected_channel;
       const text = view.state.values.postBlock.postAction.value;
       const user = body.user.id;
 
@@ -39,4 +40,4 @@ export const initListener = async (app: App): Promise<void> => {
       logger.error(error);
     }
   });
-}
+};

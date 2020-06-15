@@ -12,7 +12,7 @@ const bolt = initBolt({ express, logger });
 
 export const handler: APIGatewayProxyHandler = async (
   event,
-  context,
+  context
 ): Promise<APIGatewayProxyResult> => {
   const server = createServer(express.app);
   return proxy(server, event, context, 'PROMISE').promise;
