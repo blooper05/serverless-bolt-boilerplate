@@ -10,7 +10,7 @@ export const initListener = async (app: App): Promise<void> => {
     await say({ text, blocks });
   });
 
-  app.command('/modal', async ({ command, ack, context }) => {
+  app.command('/modal', async ({ command, ack, context, logger }) => {
     await ack();
 
     try {
@@ -21,11 +21,11 @@ export const initListener = async (app: App): Promise<void> => {
 
       await app.client.views.open({ token, trigger_id, view });
     } catch (error) {
-      console.error(error);
+      logger.error(error);
     }
   });
 
-  app.view('modal', async ({ view, ack, context, body }) => {
+  app.view('modal', async ({ view, ack, context, body, logger }) => {
     await ack();
 
     try {
@@ -36,7 +36,7 @@ export const initListener = async (app: App): Promise<void> => {
 
       await app.client.chat.postEphemeral({ token, channel, text, user });
     } catch (error) {
-      console.error(error);
+      logger.error(error);
     }
   });
 }

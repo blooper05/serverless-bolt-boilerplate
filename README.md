@@ -70,6 +70,7 @@ docker-compose run --rm app yarn run deploy:dev
 ```
 .
 ├── src
+│  ├── lib
 │  ├── views
 │  ├── app.controller.ts
 │  ├── index.ts
