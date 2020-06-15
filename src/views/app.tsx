@@ -16,7 +16,7 @@ export const helloWorld = ({ userId }: { userId: string }): Block[] => {
       <Section>
         Hi <a href={`@${userId}`}>user</a>! :wave:
       </Section>
-    </Blocks>
+    </Blocks>,
   );
 };
 
@@ -47,6 +47,6 @@ export const sampleModal = ({ userId }: { userId: string }): View => {
         blockId="channelBlock"
         actionId="channelAction"
       />
-    </Modal>
+    </Modal>,
   );
 };
